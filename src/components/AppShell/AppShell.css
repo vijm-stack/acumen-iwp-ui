@@ -1,0 +1,103 @@
+.AppShell {
+  --shell-sidebar-width: var(--sidebar-width);
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(745px 1258px at 12% 0%, rgb(2 26 50 / 0.09) 0%, rgb(2 26 50 / 0) 60%) no-repeat,
+    radial-gradient(579px 1195px at 92% 20%, rgb(239 121 38 / 0.13) 0%, rgb(239 121 38 / 0) 62%) no-repeat,
+    var(--color-background);
+}
+
+.AppShell[data-collapsed='true'] {
+  --shell-sidebar-width: var(--sidebar-width-collapsed);
+}
+
+.AppShell__sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-sidebar);
+  width: var(--shell-sidebar-width);
+  border: 1px solid rgb(255 255 255 / 0.06);
+  background: var(--color-primary-500);
+  transition: width var(--duration-slow) var(--ease-standard);
+}
+
+/* Sits half over the sidebar edge, 31px from the top (Figma) */
+.AppShell__collapse {
+  position: fixed;
+  top: 31px;
+  left: max(calc(var(--shell-sidebar-width) - 12px), 10px);
+  /* Above the top bar, which starts at the sidebar edge and would cover half the button */
+  z-index: calc(var(--z-header) + 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  box-shadow: var(--shadow-floating);
+  transition: left var(--duration-slow) var(--ease-standard);
+}
+
+.AppShell__collapse:focus-visible {
+  outline: 2px solid var(--color-accent-orange-400);
+  outline-offset: 2px;
+}
+
+.AppShell__collapseIcon {
+  transform: rotate(90deg);
+  transition: transform var(--duration-slow) var(--ease-standard);
+}
+
+.AppShell[data-collapsed='true'] .AppShell__collapseIcon {
+  transform: rotate(-90deg);
+}
+
+.AppShell__main {
+  min-height: 100vh;
+  padding-top: var(--header-height);
+  margin-left: var(--shell-sidebar-width);
+  transition: margin-left var(--duration-slow) var(--ease-standard);
+}
+
+.AppShell__backdrop {
+  display: none;
+}
+
+/* Compact: the rail stays in place and the expanded sidebar slides over the page */
+@media (max-width: 860px) {
+  .AppShell__main {
+    margin-left: var(--sidebar-width-collapsed);
+  }
+
+  .AppShell[data-collapsed='false'] .AppShell__sidebar {
+    z-index: var(--z-sidebar-overlay);
+    box-shadow: var(--shadow-sidebar-overlay);
+  }
+
+  .AppShell[data-collapsed='false'] .AppShell__collapse {
+    z-index: calc(var(--z-sidebar-overlay) + 1);
+  }
+
+  .AppShell__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-sidebar-overlay) - 1);
+    display: block;
+    padding: 0;
+    border: 0;
+    background: var(--color-overlay-light);
+    animation: fade-in var(--duration-base) ease both;
+  }
+}
+
+@media (max-width: 560px) {
+  .AppShell[data-collapsed='false'] {
+    --shell-sidebar-width: min(88vw, 300px);
+  }
+}

@@ -1,0 +1,15 @@
+.TagReason {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1-5) 11px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-tint);
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs);
+  /* Single line on wide cards; wraps instead of overflowing on narrow ones */
+  max-width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,39 @@
+.ButtonText {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-1-5);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  transition: color var(--duration-fast) ease;
+}
+
+.ButtonText--muted {
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
+}
+
+.ButtonText--link {
+  color: var(--color-info-700);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+/* Muted actions darken; link actions turn brand orange */
+.ButtonText--muted:hover {
+  color: var(--color-primary-500);
+}
+
+.ButtonText--link:hover {
+  color: var(--color-accent-orange-500);
+}
+
+.ButtonText:focus-visible {
+  outline: 2px solid var(--color-info-100);
+  outline-offset: 2px;
+}

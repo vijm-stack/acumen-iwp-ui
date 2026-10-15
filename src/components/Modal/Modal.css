@@ -1,0 +1,104 @@
+.Modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px var(--space-6);
+  background: var(--color-overlay);
+  animation: drop-in var(--duration-base) ease both;
+}
+
+.Modal__dialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-modal);
+  outline: none;
+}
+
+.ModalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 22px var(--space-6) var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-50);
+}
+
+.ModalHeader__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ModalHeader__title {
+  margin: 0;
+  color: var(--color-primary-500);
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 25px;
+  letter-spacing: -0.4px;
+}
+
+.ModalHeader__subtitle {
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.ModalHeader__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  color: var(--color-neutral-400);
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.ModalHeader__close:hover {
+  background: var(--color-neutral-50);
+  color: var(--color-primary-500);
+}
+
+.ModalHeader__close:focus-visible {
+  outline: 2px solid var(--color-info-500);
+  outline-offset: 1px;
+}
+
+.ModalFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-2-5);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-neutral-50);
+  background: var(--color-background);
+}
+
+@media (max-width: 560px) {
+  .Modal__overlay {
+    padding: var(--space-4);
+  }
+
+  .ModalHeader,
+  .ModalFooter {
+    padding-right: var(--space-4);
+    padding-left: var(--space-4);
+  }
+}

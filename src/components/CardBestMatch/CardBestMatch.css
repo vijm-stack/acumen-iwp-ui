@@ -1,0 +1,135 @@
+.CardBestMatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4-5);
+  width: 100%;
+  padding: var(--space-6);
+  border: 1px solid var(--color-neutral-50);
+  border-radius: var(--radius-2xl);
+  background: var(--color-white);
+  box-shadow: var(--shadow-card-raised);
+  animation: rise 0.4s var(--ease-out) both;
+}
+
+.CardBestMatch__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3-5);
+}
+
+/* On narrow cards the score drops under the title instead of colliding with it */
+.CardBestMatch__identity {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.CardBestMatch__identity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.CardBestMatch__iconTile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-xl);
+  background: var(--color-accent-orange-50);
+}
+
+.CardBestMatch__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.CardBestMatch__eyebrow {
+  color: var(--color-info-700);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-eyebrow);
+}
+
+.CardBestMatch__title {
+  margin: 0;
+  color: var(--color-primary-500);
+  font-size: var(--font-size-display-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display-xs);
+}
+
+.CardBestMatch__subtitle {
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.CardBestMatch__score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-0-5);
+}
+
+.CardBestMatch__scoreRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.CardBestMatch__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  background: var(--color-success-50);
+}
+
+.CardBestMatch__scoreValue {
+  color: var(--color-primary-500);
+  font-size: var(--font-size-display-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display-sm);
+}
+
+.CardBestMatch__confidence {
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs);
+}
+
+.CardBestMatch__reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.CardBestMatch__reasonsLabel {
+  color: var(--color-neutral-300);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-eyebrow);
+}
+
+.CardBestMatch__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.CardBestMatch__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2-5);
+}

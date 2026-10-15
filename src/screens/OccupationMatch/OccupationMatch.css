@@ -1,0 +1,147 @@
+/* Page content only. The sidebar, top bar and background live in AppShell. */
+.OccupationMatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-9);
+  max-width: calc(var(--content-max-width) + 2 * var(--space-6));
+  margin: 0 auto;
+  /* 64px under the 63px top bar, as in the Figma frame */
+  padding: var(--space-16) var(--space-6) var(--space-12);
+}
+
+.OccupationMatch__heading {
+  /* Lifts the country menu above the step tracker and cards below */
+  position: relative;
+  z-index: 60;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4) 28px;
+  animation: rise 0.45s var(--ease-out) both;
+}
+
+.OccupationMatch__headingText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  min-width: 0;
+}
+
+.OccupationMatch__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.OccupationMatch__title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-display-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display-sm);
+}
+
+.OccupationMatch__subtitle {
+  max-width: 560px;
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
+  text-wrap: pretty;
+}
+
+.OccupationMatch__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.OccupationMatch__primaryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.OccupationMatch__others {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3-5);
+  animation: drop-in 0.22s ease both;
+}
+
+.OccupationMatch__othersHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.OccupationMatch__othersTitle {
+  margin: 0;
+  color: var(--color-primary-500);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-md);
+}
+
+.OccupationMatch__alternatives {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-3);
+}
+
+.OccupationMatch__footnote {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 0 var(--space-0-5);
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.OccupationMatch__footnote p {
+  flex: 1;
+  min-width: 0;
+  text-wrap: pretty;
+}
+
+.OccupationMatch__sidePanel {
+  position: sticky;
+  /* Clears the fixed top bar */
+  top: calc(var(--header-height) + var(--space-6));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Narrow desktop and tablet: the side panel drops below the matches */
+@media (max-width: 1000px) {
+  .OccupationMatch__panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .OccupationMatch__sidePanel {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .OccupationMatch {
+    gap: var(--space-6);
+    padding: var(--space-8) var(--space-4) var(--space-8);
+  }
+
+  .OccupationMatch__headingText {
+    gap: var(--space-6);
+  }
+
+  .OccupationMatch__title {
+    font-size: var(--font-size-display-xs);
+    line-height: var(--line-height-display-xs);
+  }
+}

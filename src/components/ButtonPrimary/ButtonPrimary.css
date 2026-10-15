@@ -1,0 +1,34 @@
+.ButtonPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px var(--space-5);
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-orange-500);
+  color: var(--color-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  white-space: nowrap;
+}
+
+.ButtonPrimary:hover:not(:disabled) {
+  background: var(--color-accent-orange-600);
+}
+
+.ButtonPrimary:active:not(:disabled) {
+  background: var(--color-accent-orange-700);
+}
+
+.ButtonPrimary:focus-visible {
+  outline: 3px solid var(--color-accent-orange-400);
+  outline-offset: 2px;
+}
+
+.ButtonPrimary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

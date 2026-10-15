@@ -1,0 +1,12 @@
+.ProgressBar {
+  height: 4px;
+  min-width: 1px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--color-neutral-50);
+}
+
+.ProgressBar__fill {
+  height: 100%;
+  background: var(--color-neutral-300);
+}

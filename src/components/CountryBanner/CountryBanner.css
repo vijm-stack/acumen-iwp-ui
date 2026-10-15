@@ -1,0 +1,132 @@
+.CountryBanner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: var(--space-4);
+  width: 100%;
+  /* Figma draws the 1px border inside its 24/30px padding */
+  padding: 23px 29px;
+  border: 1px solid var(--color-info-100);
+  border-radius: var(--radius-3xl);
+  background:
+    radial-gradient(
+      1241px 144px at 68px 7px,
+      rgb(124 171 249 / 0.26) 0%,
+      rgb(124 171 249 / 0.08) 42%,
+      rgb(124 171 249 / 0) 72%
+    ),
+    radial-gradient(218px 207px at 100% 0, rgb(124 171 249 / 0.2) 0%, rgb(124 171 249 / 0) 70%),
+    radial-gradient(1015px 133px at 1038px 107px, rgb(124 171 249 / 0.18) 0%, rgb(124 171 249 / 0) 68%),
+    #f7fbff;
+  box-shadow: var(--shadow-banner);
+  animation: rise 0.45s var(--ease-out) 0.02s both;
+}
+
+.CountryBanner__intro {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  max-width: 620px;
+}
+
+.CountryBanner__iconWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CountryBanner__glow {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 74px;
+  height: 74px;
+  border-radius: 37px;
+  background: radial-gradient(
+    52px 52px at 50% 50%,
+    rgb(124 171 249 / 0.5) 0%,
+    rgb(124 171 249 / 0.14) 46%,
+    rgb(124 171 249 / 0) 72%
+  );
+  filter: blur(3px);
+}
+
+.CountryBanner__iconTile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(155deg, #7eaffc 0%, #4a83e0 100%);
+  box-shadow:
+    0 5px 7px rgb(43 96 176 / 0.3),
+    inset 0 1px 0 rgb(255 255 255 / 0.55);
+}
+
+.CountryBanner__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.CountryBanner__eyebrow {
+  color: var(--color-info-500);
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 10px;
+  letter-spacing: 1.4px;
+}
+
+.CountryBanner__title {
+  margin: 0;
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: 23px;
+}
+
+.CountryBanner__hint {
+  padding-right: 58px;
+  color: var(--color-neutral-700);
+  font-size: 12.5px;
+  line-height: var(--line-height-xs);
+}
+
+.CountryBanner__countries {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding-right: var(--space-4-5);
+}
+
+/* 26px hit area centred on the 12px Figma icon */
+.CountryBanner__close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: none;
+  transition: background-color var(--duration-base) ease;
+}
+
+.CountryBanner__close:hover {
+  background: rgb(2 26 50 / 0.06);
+}
+
+.CountryBanner__close:focus-visible {
+  outline: 2px solid var(--color-info-500);
+  outline-offset: 2px;
+}

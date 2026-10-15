@@ -1,0 +1,127 @@
+.StepTracker {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgb(255 255 255 / 0.82);
+  box-shadow: inset 0 0 0 1px var(--color-border-subtle);
+  list-style: none;
+  animation: rise 0.45s var(--ease-out) 0.04s both;
+}
+
+.StepTracker__step {
+  display: flex;
+  align-items: center;
+  flex-basis: 0;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: 15px var(--space-4-5);
+}
+
+.StepTracker__step + .StepTracker__step {
+  border-left: 1px solid var(--color-border-subtle);
+}
+
+.StepTracker__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.StepTracker__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+  min-width: 0;
+}
+
+.StepTracker__title,
+.StepTracker__description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.StepTracker__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+}
+
+.StepTracker__description {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.StepTracker__srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* Active */
+.StepTracker__step--current .StepTracker__number {
+  background: var(--color-accent-orange-600);
+  box-shadow: 0 0 0 4px rgb(239 121 38 / 0.16);
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+}
+
+.StepTracker__step--current .StepTracker__title,
+.StepTracker__step--done .StepTracker__title {
+  color: var(--color-primary-500);
+}
+
+.StepTracker__step--current .StepTracker__description,
+.StepTracker__step--done .StepTracker__description {
+  color: var(--color-neutral-500);
+}
+
+/* Done */
+.StepTracker__step--done .StepTracker__number {
+  background: var(--gradient-selected);
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Upcoming */
+.StepTracker__step--upcoming {
+  opacity: 0.62;
+}
+
+.StepTracker__step--upcoming .StepTracker__number {
+  background: var(--color-neutral-50);
+  color: var(--color-neutral-600);
+  font-weight: var(--font-weight-semibold);
+}
+
+.StepTracker__step--upcoming .StepTracker__title {
+  color: var(--color-neutral-500);
+}
+
+.StepTracker__step--upcoming .StepTracker__description {
+  color: var(--color-neutral-300);
+}
+
+@media (max-width: 900px) {
+  .StepTracker {
+    flex-wrap: wrap;
+  }
+
+  .StepTracker__step {
+    flex: 1 1 220px !important;
+  }
+}

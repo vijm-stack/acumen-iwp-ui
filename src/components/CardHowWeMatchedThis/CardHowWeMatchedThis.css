@@ -1,0 +1,55 @@
+.CardHowWeMatchedThis {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: var(--space-4-5);
+  border-radius: var(--radius-2xl);
+  background: var(--color-primary-500);
+  color: var(--color-white);
+}
+
+.CardHowWeMatchedThis__eyebrow {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  opacity: 0.5;
+}
+
+.CardHowWeMatchedThis__summary {
+  color: var(--color-neutral-50);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+}
+
+.CardHowWeMatchedThis__threshold {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  opacity: 0.62;
+}
+
+.CardHowWeMatchedThis__divider {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--color-white);
+  opacity: 0.12;
+}
+
+.CardHowWeMatchedThis__signals {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs);
+}
+
+.CardHowWeMatchedThis__signals li {
+  opacity: 0.92;
+}

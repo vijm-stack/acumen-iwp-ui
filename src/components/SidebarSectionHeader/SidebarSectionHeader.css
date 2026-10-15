@@ -1,0 +1,21 @@
+.SidebarSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0 var(--space-2);
+  border: 0;
+  background: none;
+  color: var(--color-neutral-100);
+  font-family: var(--font-family-base);
+}
+
+.SidebarSectionHeader__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+}
+
+.SidebarSectionHeader__chevron--closed {
+  transform: rotate(-90deg);
+}

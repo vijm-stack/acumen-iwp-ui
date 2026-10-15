@@ -1,0 +1,100 @@
+.DialogEditJobDescription__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+  padding: var(--space-4-5) var(--space-6) var(--space-5);
+  overflow-y: auto;
+}
+
+.DialogEditJobDescription__textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: var(--space-4);
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: var(--color-background);
+  box-shadow: inset 0 0 0 1px var(--color-neutral-50);
+  color: var(--color-neutral-900);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  line-height: 21px;
+  resize: vertical;
+  transition: box-shadow var(--duration-fast) ease;
+}
+
+.DialogEditJobDescription__textarea:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 1.5px var(--color-ring-info);
+}
+
+.DialogEditJobDescription__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 15px;
+  border-radius: var(--radius-lg);
+  background: var(--color-tint-orange);
+  box-shadow: inset 0 0 0 1px rgb(239 121 38 / 0.3);
+  color: var(--color-accent-orange-700);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs);
+  text-wrap: pretty;
+}
+
+.DialogEditJobDescription__note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--color-accent-orange-600);
+}
+
+.DialogEditJobDescription__cancel {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: 11px;
+  background: none;
+  color: var(--color-neutral-500);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  transition: color var(--duration-fast) ease;
+}
+
+.DialogEditJobDescription__cancel:hover {
+  color: var(--color-primary-500);
+}
+
+.DialogEditJobDescription__save {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 40px;
+  padding: 0 var(--space-4-5);
+  border: 0;
+  border-radius: 11px;
+  background: var(--color-accent-orange-500);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  transition: background-color var(--duration-base) ease;
+}
+
+.DialogEditJobDescription__save:hover:not(:disabled) {
+  background: var(--color-accent-orange-600);
+}
+
+.DialogEditJobDescription__save:disabled {
+  background: var(--color-neutral-100);
+  cursor: default;
+}
+
+.DialogEditJobDescription__cancel:focus-visible,
+.DialogEditJobDescription__save:focus-visible {
+  outline: 3px solid var(--color-accent-orange-400);
+  outline-offset: 2px;
+}

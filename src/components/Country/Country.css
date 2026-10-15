@@ -1,0 +1,48 @@
+.Country {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow:
+    inset 0 0 0 1px var(--color-neutral-50),
+    var(--shadow-chip);
+  color: var(--color-neutral-900);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  white-space: nowrap;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.Country:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 0 1.5px rgb(43 96 176 / 0.45),
+    var(--shadow-chip-hover);
+}
+
+.Country--selected {
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-600));
+  color: var(--color-neutral-50);
+}
+
+.Country:focus-visible {
+  outline: 3px solid var(--color-info-100);
+  outline-offset: 2px;
+}
+
+.Country__flag {
+  display: block;
+  width: 20px;
+  height: 14px;
+  border: 1px solid var(--color-neutral-50);
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+}

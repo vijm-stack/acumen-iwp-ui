@@ -1,0 +1,187 @@
+.CountrySelector {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.CountrySelector__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 38px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: inset 0 0 0 1px var(--color-neutral-100);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  white-space: nowrap;
+  transition: box-shadow var(--duration-fast) ease;
+}
+
+.CountrySelector__chip:hover {
+  box-shadow: inset 0 0 0 1px var(--color-neutral-300);
+}
+
+.CountrySelector__chip--ring,
+.CountrySelector__chip--ring:hover {
+  box-shadow: inset 0 0 0 1px var(--color-ring-hover);
+}
+
+.CountrySelector__chip:focus-visible {
+  outline: 3px solid var(--color-accent-orange-400);
+  outline-offset: 2px;
+}
+
+.CountrySelector__flag {
+  display: block;
+  width: 22px;
+  height: 16px;
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+}
+
+.CountrySelector__name {
+  color: var(--color-neutral-900);
+}
+
+.CountrySelector__currency {
+  color: var(--color-neutral-400);
+}
+
+.CountrySelector__chevron--open {
+  transform: rotate(180deg);
+}
+
+.CountrySelector__menu {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  z-index: var(--z-popover);
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: var(--space-2);
+  border-radius: var(--radius-2xl);
+  background: var(--color-white);
+  box-shadow:
+    var(--shadow-popover),
+    inset 0 0 0 1px var(--color-neutral-50);
+  animation: drop-in 0.16s ease both;
+}
+
+.CountrySelector__menuLabel {
+  padding: 9px var(--space-3) 7px;
+  color: var(--color-neutral-300);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-eyebrow);
+}
+
+.CountrySelector__row,
+.CountrySelector__default {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: var(--space-2-5) var(--space-3);
+  border: 0;
+  border-radius: 11px;
+  background: none;
+  text-align: left;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.CountrySelector__row:hover,
+.CountrySelector__default:hover {
+  background: var(--color-neutral-50);
+}
+
+.CountrySelector__row--active {
+  background: var(--color-background);
+}
+
+.CountrySelector__row:focus-visible,
+.CountrySelector__default:focus-visible {
+  outline: 2px solid var(--color-info-500);
+  outline-offset: -2px;
+}
+
+.CountrySelector__rowFlag {
+  display: block;
+  width: 26px;
+  height: 19px;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+}
+
+.CountrySelector__rowText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.CountrySelector__rowName {
+  color: var(--color-primary-500);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+}
+
+.CountrySelector__rowStats {
+  color: var(--color-neutral-400);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.CountrySelector__default {
+  margin-top: var(--space-1-5);
+  padding: var(--space-3);
+  border-radius: 0 0 11px 11px;
+  border-top: 1px solid var(--color-neutral-50);
+}
+
+.CountrySelector__defaultLabel {
+  color: var(--color-neutral-900);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+}
+
+.CountrySelector__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1.5px var(--color-neutral-100);
+  color: transparent;
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.CountrySelector__box--on {
+  background: var(--color-accent-orange-500);
+  box-shadow: none;
+  color: var(--color-white);
+}
+
+@media (max-width: 1000px) {
+  .CountrySelector__menu {
+    right: auto;
+    left: 0;
+  }
+}

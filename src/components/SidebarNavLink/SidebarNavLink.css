@@ -1,0 +1,24 @@
+.SidebarNavLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px var(--space-2);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: none;
+  color: var(--color-accent-orange-400);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs);
+  text-align: left;
+}
+
+.SidebarNavLink:hover {
+  background: rgb(255 255 255 / 0.06);
+}
+
+.SidebarNavLink:focus-visible {
+  outline: 2px solid var(--color-accent-orange-400);
+  outline-offset: -2px;
+}

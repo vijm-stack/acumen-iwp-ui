@@ -1,0 +1,150 @@
+/*
+ * Design tokens - the single source of truth for the design system.
+ * Values come from the Figma file "Acumen - IWP Design system" (variables).
+ * Components must only use these via var(--token-name).
+ */
+:root {
+  /* Color - primary */
+  --color-primary-500: #021a32;
+  --color-primary-600: #064f98; /* end of the selected-country gradient */
+
+  /* Color - neutral */
+  --color-white: #ffffff;
+  --color-neutral-50: #f0f1f2;
+  --color-neutral-100: #d1d4d7;
+  --color-neutral-300: #9da1a9;
+  --color-neutral-400: #898f99;
+  --color-neutral-500: #6c737f;
+  --color-neutral-600: #626974;
+  --color-neutral-700: #4d525a;
+  --color-neutral-900: #2d3035;
+
+  /* Color - accent (orange) */
+  --color-accent-orange-50: #fdf2e9;
+  --color-accent-orange-400: #f29451;
+  --color-accent-orange-500: #ef7926;
+  --color-accent-orange-600: #d96e23;
+  --color-accent-orange-700: #aa561b;
+
+  /* Color - status */
+  --color-info-100: #c2d8fc;
+  --color-info-500: #3b82f6;
+  --color-info-700: #2a5caf;
+  --color-success-50: #e8f6ed;
+  --color-success-700: #107435;
+  --color-error-500: #ef4444;
+
+  /* Color - semantic */
+  --color-background: #fafbfd;
+  --color-text-primary: var(--color-neutral-900);
+
+  /* Color - used in the design but not (yet) Figma variables */
+  --color-surface-tint: #f7fafd; /* reason tags */
+  --color-border-subtle: #eef2f6; /* step tracker */
+  --color-sidebar-line: #3f454d; /* sidebar connectors */
+  --color-sidebar-divider: rgb(255 255 255 / 0.1);
+  --color-avatar: #c57733;
+
+  /* Typography */
+  --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 12px; /* Text xs */
+  --line-height-xs: 18px;
+  --font-size-sm: 14px; /* Text sm */
+  --line-height-sm: 20px;
+  --font-size-md: 16px; /* Text md */
+  --line-height-md: 24px;
+  --font-size-display-xs: 24px; /* Display xs */
+  --line-height-display-xs: 32px;
+  --font-size-display-sm: 30px; /* Display sm */
+  --line-height-display-sm: 38px;
+
+  --letter-spacing-eyebrow: 0.96px;
+
+  /* Spacing */
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-3-5: 14px;
+  --space-4: 16px;
+  --space-4-5: 18px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-xs: 3px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadow - from Figma */
+  --shadow-card-raised: 0 10px 14px rgb(2 26 50 / 0.08);
+  --shadow-chip: 0 2px 8px rgb(43 96 176 / 0.08);
+  --shadow-banner: 0 6px 10px rgb(43 96 176 / 0.1);
+  --shadow-floating: 0 1px 2px rgb(0 0 0 / 0.14);
+
+  /* Shadow - interaction layers (hover, popovers, dialogs) */
+  --shadow-card-hover: 0 10px 22px rgb(2 26 50 / 0.08);
+  --shadow-chip-hover: 0 10px 22px rgb(43 96 176 / 0.18);
+  --shadow-popover: 0 18px 44px rgb(2 26 50 / 0.16);
+  --shadow-notifications: 0 24px 60px rgb(2 26 50 / 0.2);
+  --shadow-modal: 0 30px 70px rgb(2 26 50 / 0.28);
+  --shadow-toast: 0 12px 32px rgb(2 10 22 / 0.28);
+  --shadow-sidebar-overlay: 8px 0 32px rgb(0 0 0 / 0.3);
+
+  /* Overlays and rings */
+  --color-overlay: rgb(2 26 50 / 0.42);
+  --color-overlay-light: rgb(2 26 50 / 0.28);
+  --color-ring-hover: rgb(239 121 38 / 0.55); /* orange-500 at 55% */
+  --color-ring-info: rgb(59 130 246 / 0.55); /* info-500 at 55% */
+  --color-tint-orange: rgb(239 121 38 / 0.08);
+  --color-tint-orange-strong: rgb(239 121 38 / 0.16);
+  --color-tint-info: rgb(59 130 246 / 0.09);
+  --color-sidebar-hover: rgb(255 255 255 / 0.06);
+  --color-toast-success: #34c778; /* not a Figma variable yet */
+
+  /* Gradients */
+  --gradient-selected: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-600));
+
+  /* Motion */
+  --duration-fast: 0.15s;
+  --duration-base: 0.18s;
+  --duration-slow: 0.32s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layering */
+  --z-popover: 30;
+  --z-sidebar: 60;
+  --z-header: 100;
+  --z-sidebar-overlay: 120;
+  --z-modal: 200;
+  --z-toast: 250;
+
+  /* Layout
+   * Breakpoints (CSS cannot read variables inside @media, so they are repeated):
+   *   1000px  two-column content stacks, popovers align left
+   *    900px  step tracker wraps
+   *    860px  sidebar becomes an overlay drawer over an icon rail
+   *    560px  expanded drawer is 88vw wide (max 300px)
+   */
+  --sidebar-width: 248px;
+  --sidebar-width-collapsed: 80px;
+  --header-height: 63px;
+  --content-max-width: 1128px;
+}

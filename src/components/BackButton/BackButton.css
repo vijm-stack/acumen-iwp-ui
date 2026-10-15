@@ -1,0 +1,29 @@
+.BackButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2-5);
+  padding: var(--space-3);
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  color: var(--color-neutral-900);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  white-space: nowrap;
+  transition:
+    box-shadow var(--duration-fast) ease,
+    background-color var(--duration-fast) ease;
+}
+
+.BackButton:hover {
+  background: var(--color-background);
+  box-shadow: inset 0 0 0 1px var(--color-primary-500);
+}
+
+.BackButton:focus-visible {
+  outline: 3px solid var(--color-info-100);
+  outline-offset: 2px;
+}

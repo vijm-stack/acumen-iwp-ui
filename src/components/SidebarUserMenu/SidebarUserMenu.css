@@ -1,0 +1,118 @@
+.SidebarUserMenu {
+  position: relative;
+  width: 100%;
+  padding: var(--space-2) var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-sidebar-divider);
+}
+
+.SidebarUserMenu--collapsed {
+  padding-right: var(--space-2);
+  padding-left: var(--space-2);
+}
+
+.SidebarUserMenu__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: none;
+  font-family: var(--font-family-base);
+  text-align: left;
+}
+
+.SidebarUserMenu--collapsed .SidebarUserMenu__row {
+  justify-content: center;
+}
+
+.SidebarUserMenu__row:focus-visible {
+  outline: 2px solid var(--color-accent-orange-400);
+  outline-offset: 2px;
+}
+
+.SidebarUserMenu__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: var(--color-avatar);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+}
+
+.SidebarUserMenu__details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  white-space: nowrap;
+}
+
+.SidebarUserMenu__name {
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+}
+
+.SidebarUserMenu__role {
+  color: var(--color-neutral-300);
+  font-weight: var(--font-weight-medium);
+}
+
+.SidebarUserMenu__chevron--open {
+  transform: rotate(180deg);
+}
+
+.SidebarUserMenu__menu {
+  position: absolute;
+  right: var(--space-4);
+  bottom: 72px;
+  left: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+  padding: var(--space-2);
+  border-radius: var(--radius-xl);
+  background: var(--color-neutral-900);
+  box-shadow:
+    0 -10px 30px rgb(0 0 0 / 0.35),
+    inset 0 0 0 1px rgb(255 255 255 / 0.08);
+  animation: rise 0.18s ease;
+}
+
+.SidebarUserMenu__item {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 var(--space-2-5);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--color-neutral-50);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.SidebarUserMenu__item:hover {
+  background: rgb(255 255 255 / 0.08);
+}
+
+.SidebarUserMenu__item--danger {
+  color: var(--color-accent-orange-400);
+}
+
+.SidebarUserMenu__item:focus-visible {
+  outline: 2px solid var(--color-accent-orange-400);
+  outline-offset: -2px;
+}

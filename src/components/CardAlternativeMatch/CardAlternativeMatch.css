@@ -1,0 +1,81 @@
+.CardAlternativeMatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+  min-width: 0;
+  min-height: 172px;
+  padding: var(--space-4-5);
+  border: 1px solid var(--color-neutral-50);
+  border-radius: var(--radius-2xl);
+  background: var(--color-white);
+  transition:
+    box-shadow var(--duration-base) ease,
+    transform var(--duration-base) ease;
+  animation: drop-in 0.22s ease both;
+}
+
+.CardAlternativeMatch:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.CardAlternativeMatch--highlighted {
+  border-color: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--color-ring-hover);
+}
+
+.CardAlternativeMatch--highlighted:hover {
+  box-shadow:
+    inset 0 0 0 1.5px var(--color-ring-hover),
+    var(--shadow-card-hover);
+}
+
+.CardAlternativeMatch__eyebrow {
+  color: var(--color-accent-orange-600);
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 10px;
+  letter-spacing: 0.9px;
+}
+
+.CardAlternativeMatch__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+/* Long occupation names wrap rather than truncate (as in the prototype) */
+.CardAlternativeMatch__title {
+  color: var(--color-primary-500);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  text-wrap: pretty;
+}
+
+.CardAlternativeMatch__subtitle {
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  text-wrap: pretty;
+}
+
+.CardAlternativeMatch__scoreRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  margin-top: auto;
+  padding-top: var(--space-6);
+}
+
+.CardAlternativeMatch__score {
+  color: var(--color-neutral-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+}
+
+.CardAlternativeMatch__bar {
+  flex: 1;
+}

@@ -1,0 +1,6 @@
+/* Figma frame is 14px; the 16px glyph is offset by -1px so it overflows evenly. */
+.IconInfo {
+  display: block;
+  flex-shrink: 0;
+  margin: -1px;
+}

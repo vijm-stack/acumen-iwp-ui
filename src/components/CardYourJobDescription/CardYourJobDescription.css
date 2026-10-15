@@ -1,0 +1,33 @@
+.CardYourJobDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-neutral-50);
+  border-radius: var(--radius-2xl);
+  background: var(--color-white);
+}
+
+.CardYourJobDescription__title {
+  color: var(--color-primary-500);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+}
+
+.CardYourJobDescription__preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+}
+
+.CardYourJobDescription__line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

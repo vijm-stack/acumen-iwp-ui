@@ -1,0 +1,31 @@
+.ButtonSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 36px;
+  border: 1px solid var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  color: var(--color-info-700);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-xs);
+  white-space: nowrap;
+  transition:
+    border-color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.ButtonSecondary:hover:not(:disabled) {
+  border-color: var(--color-ring-hover);
+  background: var(--color-tint-orange);
+  color: var(--color-accent-orange-700);
+}
+
+.ButtonSecondary:focus-visible {
+  outline: 3px solid var(--color-info-100);
+  outline-offset: 2px;
+}
